@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin.json",
+  "name": "content-ops",
+  "version": "1.0.0",
+  "description": "Research → draft → review → repurpose pipeline for content creators. Four agents, five namespaced skills, three production hooks. Built from the GenAI Unplugged Claude Code Masterclass.",
+  "author": {
+    "name": "Dheeraj Sharma",
+    "email": "support@genaiunplugged.com",
+    "url": "https://genaiunplugged.com"
+  },
+  "homepage": "https://www.genaiunplugged.com/courses/claude-code/lesson-6",
+  "repository": "https://github.com/genaiunplugged14/claude-plugins",
+  "license": "MIT",
+  "keywords": [
+    "content",
+    "writing",
+    "research",
+    "newsletter",
+    "claude-code",
+    "creator-tools"
+  ],
+  "userConfig": {
+    "PERPLEXITY_API_KEY": {
+      "description": "Perplexity API key (free tier 1,000 req/mo). Used by the researcher agent for web research.",
+      "type": "string",
+      "secret": true,
+      "required": true
+    },
+    "FIRECRAWL_API_KEY": {
+      "description": "Firecrawl API key (free tier 500 pages/mo). Used by the researcher agent for clean page extraction.",
+      "type": "string",
+      "secret": true,
+      "required": true
+    }
+  }
+}

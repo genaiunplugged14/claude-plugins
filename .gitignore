@@ -1,0 +1,19 @@
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Local-only test outputs
+/tmp/
+test-output/
+
+# Secrets — should never be committed (the plugin uses env vars + userConfig)
+.env
+.env.local
+*.key
+*.pem

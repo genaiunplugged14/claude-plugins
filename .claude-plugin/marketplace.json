@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "genaiunplugged14",
+  "description": "GenAI Unplugged Claude Code plugins (research, content, distribution, channels)",
+  "owner": {
+    "name": "GenAI Unplugged",
+    "url": "https://genaiunplugged.com"
+  },
+  "plugins": [
+    {
+      "name": "content-ops",
+      "description": "Research → draft → review → repurpose pipeline for content creators (4 agents, 5 namespaced skills, 3 hooks)",
+      "category": "content",
+      "source": {
+        "type": "git-subdir",
+        "url": "https://github.com/genaiunplugged14/claude-plugins",
+        "path": "content-ops"
+      }
+    }
+  ]
+}
