@@ -1,11 +1,17 @@
 #!/usr/bin/env bash
 # format-on-save.sh — PostToolUse hook on Edit|Write.
-# Runs `prettier --write` on .md files in drafts/ and distribution/.
-# Silently exits 0 if prettier isn't installed (so the plugin works without it).
+# Reads JSON from stdin, runs `prettier --write` on .md files in drafts/ and distribution/.
+# Silently exits 0 if prettier isn't installed or jq isn't available.
 
 set -euo pipefail
 
-FILE_PATH="${CLAUDE_FILE_PATH:-${1:-}}"
+# Tolerate missing jq (so the hook never errors out the editor)
+if ! command -v jq >/dev/null 2>&1; then
+  exit 0
+fi
+
+INPUT_JSON=$(cat)
+FILE_PATH=$(echo "$INPUT_JSON" | jq -r '.tool_input.file_path // ""' 2>/dev/null || echo "")
 
 # No file path = nothing to do
 if [ -z "$FILE_PATH" ]; then
@@ -21,7 +27,7 @@ case "$FILE_PATH" in
     ;;
 esac
 
-# Skip if prettier isn't available
+# Skip if neither prettier nor npx is available
 if ! command -v prettier >/dev/null 2>&1 && ! command -v npx >/dev/null 2>&1; then
   exit 0
 fi

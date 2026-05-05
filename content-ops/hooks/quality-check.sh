@@ -1,11 +1,17 @@
 #!/usr/bin/env bash
 # quality-check.sh — PostToolUse hook on Edit|Write.
-# Dual guard: only fires on drafts/*-draft.md AND when word count >= 1000.
-# Without the dual guard, the hook fires on every intermediate save and creates a writer/hook feedback loop.
+# Reads JSON from stdin. Dual guard: only fires on drafts/*-draft.md AND when word count >= 1000.
+# Without the dual guard, this would fire on every intermediate save and create a writer/hook feedback loop.
 
 set -euo pipefail
 
-FILE_PATH="${CLAUDE_FILE_PATH:-${1:-}}"
+# Tolerate missing jq
+if ! command -v jq >/dev/null 2>&1; then
+  exit 0
+fi
+
+INPUT_JSON=$(cat)
+FILE_PATH=$(echo "$INPUT_JSON" | jq -r '.tool_input.file_path // ""' 2>/dev/null || echo "")
 
 # No file path = nothing to do
 if [ -z "$FILE_PATH" ]; then
@@ -21,7 +27,7 @@ case "$FILE_PATH" in
     ;;
 esac
 
-# File must exist (Write hook fires before file is fully on disk in some cases)
+# File must exist on disk (Write hook fires before file is fully flushed in some edge cases)
 if [ ! -f "$FILE_PATH" ]; then
   exit 0
 fi
@@ -35,13 +41,13 @@ fi
 # Both guards passed. Run the audit.
 ISSUES=()
 
-# Check for em-dashes
+# Em-dash check
 if grep -q "—\|–" "$FILE_PATH" 2>/dev/null; then
   COUNT=$(grep -o "—\|–" "$FILE_PATH" 2>/dev/null | wc -l | tr -d ' ')
   ISSUES+=("$COUNT em-dash/en-dash usage(s) — brand rule is zero")
 fi
 
-# Check for forbidden phrases (case-insensitive)
+# Forbidden phrase check (case-insensitive)
 FORBIDDEN=(
   "in today's fast-paced world"
   "leverage"
@@ -58,7 +64,7 @@ for phrase in "${FORBIDDEN[@]}"; do
   fi
 done
 
-# Report
+# Report (warning only, never blocks the write)
 if [ ${#ISSUES[@]} -gt 0 ]; then
   echo "" >&2
   echo "⚠️  quality-check.sh flagged $FILE_PATH:" >&2
@@ -66,7 +72,6 @@ if [ ${#ISSUES[@]} -gt 0 ]; then
     echo "   • $issue" >&2
   done
   echo "" >&2
-  # Exit 0 (warning, not block) so writes still succeed
 fi
 
 exit 0

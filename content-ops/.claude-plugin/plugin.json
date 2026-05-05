@@ -21,15 +21,17 @@
   ],
   "userConfig": {
     "PERPLEXITY_API_KEY": {
-      "description": "Perplexity API key (free tier 1,000 req/mo). Used by the researcher agent for web research.",
       "type": "string",
-      "secret": true,
+      "title": "Perplexity API key",
+      "description": "Free tier 1,000 req/mo. Used by the researcher agent for web research. Get one at https://perplexity.ai/settings/api",
+      "sensitive": true,
       "required": true
     },
     "FIRECRAWL_API_KEY": {
-      "description": "Firecrawl API key (free tier 500 pages/mo). Used by the researcher agent for clean page extraction.",
       "type": "string",
-      "secret": true,
+      "title": "Firecrawl API key",
+      "description": "Free tier 500 pages/mo. Used by the researcher agent for clean page extraction. Get one at https://firecrawl.dev",
+      "sensitive": true,
       "required": true
     }
   }
