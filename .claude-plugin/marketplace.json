@@ -11,11 +11,7 @@
       "name": "content-ops",
       "description": "Research → draft → review → repurpose pipeline for content creators (4 agents, 5 namespaced skills, 3 hooks)",
       "category": "content",
-      "source": {
-        "type": "git-subdir",
-        "url": "https://github.com/genaiunplugged14/claude-plugins",
-        "path": "content-ops"
-      }
+      "source": "./content-ops"
     }
   ]
 }
