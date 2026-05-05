@@ -131,6 +131,50 @@ Source: https://github.com/genaiunplugged14/claude-plugins/tree/main/content-ops
 
 Issues: https://github.com/genaiunplugged14/claude-plugins/issues
 
+## Important: terms of use, disclaimer, and privacy
+
+This plugin is shipped FOR EDUCATIONAL AND PERSONAL USE under the MIT License. Read this section before installing.
+
+### Educational and at-your-own-risk
+
+The plugin, every agent inside it, and every hook script (including `block-dangerous.sh`, `format-on-save.sh`, and `quality-check.sh`) are provided as a teaching companion to the [Claude Code Masterclass](https://www.genaiunplugged.com/courses/claude-code/). They demonstrate how to package a content pipeline as a Claude Code plugin. They are NOT a security product, NOT a production safety system, and NOT a substitute for human review of AI output.
+
+In particular:
+
+- `block-dangerous.sh` is a teaching example of a PreToolUse hook. It blocks a small set of obvious patterns (`rm -rf /`, `git push --force`, fork bombs, raw `dd` writes). It is NOT a comprehensive security control and MUST NOT be relied on as one. A determined attacker, a creative typo, or a command structured slightly differently can bypass it. Use real OS-level permissions, version control, and backups for actual safety.
+- The researcher, writer, reviewer, and multiplier agents produce AI-generated content. AI output can be wrong, biased, or fabricated. Verify every factual claim before publishing. Edit every draft with human judgement.
+
+### Disclaimer of warranty (MIT)
+
+This plugin is provided "AS IS", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the plugin or the use or other dealings in the plugin.
+
+Full text in [LICENSE](../LICENSE) at the marketplace root.
+
+### Costs and third-party services
+
+You are responsible for any costs your usage incurs.
+
+- **Anthropic (Claude API)** — every skill invocation uses Claude tokens. Anthropic Pro / Max subscriptions cover most personal use; pay-per-use API access bills your account.
+- **Perplexity API** — the researcher agent calls Perplexity's search API. Free tier is 1,000 requests/month; usage beyond that bills your Perplexity account. Subject to [Perplexity's privacy policy](https://www.perplexity.ai/hub/legal/privacy-policy) and [terms](https://www.perplexity.ai/hub/legal/terms-of-service).
+- **Firecrawl API** — the researcher agent calls Firecrawl to extract page content from URLs. Free tier is 500 pages/month; usage beyond that bills your Firecrawl account. Subject to [Firecrawl's privacy policy](https://www.firecrawl.dev/privacy) and [terms](https://www.firecrawl.dev/terms-of-service).
+
+When you install the plugin, your search queries flow through Perplexity and the URLs you scrape flow through Firecrawl. Review their respective policies before installing.
+
+### File system writes
+
+The plugin's skills create files in `drafts/` and `distribution/` inside whatever project you run them in. Run the plugin in a folder you are comfortable having modified. Don't run it inside system folders, sensitive repos, or production deployments without understanding what it will write.
+
+### Privacy and terms — GenAI Unplugged
+
+The plugin itself does not collect or transmit any data to GenAI Unplugged. For the broader GenAI Unplugged service, see:
+
+- [Privacy Policy](https://www.genaiunplugged.com/legal/privacy-policy)
+- [Terms of Service](https://www.genaiunplugged.com/legal/terms-of-service)
+
+### Reporting issues and security concerns
+
+Bug reports and PRs welcome at [the repo issues page](https://github.com/genaiunplugged14/claude-plugins/issues). For security disclosures, email support@genaiunplugged.com.
+
 ## License
 
 MIT. See [LICENSE](../LICENSE) at the marketplace root.
