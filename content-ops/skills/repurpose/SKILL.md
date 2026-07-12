@@ -21,3 +21,6 @@ The multiplier should:
 Each piece must work standalone. After the multiplier finishes, show me the three file paths and the LinkedIn opening line.
 
 Note: this skill REPURPOSES (writes platform-specific copy to disk). It does NOT distribute (post to platforms). That's a separate problem with API tokens and scheduling.
+## Anti-AI voice gate (required)
+
+All prose this skill produces must pass `00-Core/brand/anti-ai-rules.md`, the OS-wide GenAI Unplugged writing standard, on top of the brand voice guide. No em dashes. No banned AI vocabulary (delve, leverage, unlock, tapestry, realm, seamless, robust, elevate, game-changer, cutting-edge, streamline, meticulous). No negative-parallelism ("it is not X, it is Y", "not just X but Y"). No dead phrases ("in today's", "let's dive in", "at the end of the day"). Vary sentence length and be specific with numbers.
