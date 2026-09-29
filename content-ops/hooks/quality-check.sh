@@ -64,7 +64,8 @@ for phrase in "${FORBIDDEN[@]}"; do
   fi
 done
 
-# Report (warning only, never blocks the write)
+# Report. Exit 2 sends the issues back to Claude so the writer fixes them.
+# On exit 0 Claude never sees stderr, so a warning that exits 0 reaches nobody.
 if [ ${#ISSUES[@]} -gt 0 ]; then
   echo "" >&2
   echo "⚠️  quality-check.sh flagged $FILE_PATH:" >&2
@@ -72,6 +73,7 @@ if [ ${#ISSUES[@]} -gt 0 ]; then
     echo "   • $issue" >&2
   done
   echo "" >&2
+  exit 2
 fi
 
 exit 0

@@ -95,7 +95,7 @@ content-ops/
 
 - **`block-dangerous.sh`** fires on every Bash command and refuses `rm -rf /`, `git push --force`, `drop table`, fork bombs, raw `dd` writes. Fires regardless of permission mode.
 - **`format-on-save.sh`** runs `prettier --write` on `.md` files in `drafts/` and `distribution/`. Silently skips if prettier isn't installed.
-- **`quality-check.sh`** flags em-dashes and forbidden phrases. Dual guard (`drafts/*-draft.md` AND `>=1000 words`) prevents the writer/hook feedback loop. Warns to stderr; never blocks.
+- **`quality-check.sh`** flags em-dashes and forbidden phrases. Dual guard (`drafts/*-draft.md` AND `>=1000 words`) prevents the writer/hook feedback loop. Exits 2 when it finds something, which sends the list back to the writer to fix. The file is already saved by then, so the hook corrects, it does not prevent.
 
 ## Permission modes
 
