@@ -1,6 +1,6 @@
 # content-team
 
-A three-agent content team for Claude Code: a researcher, a writer and a reviewer, each with its own command, plus one guard that blocks brochure phrases in drafts.
+A three-agent content team for Claude Code: a researcher, a writer and a reviewer, each with its own command, plus one guard that catches brochure phrases in drafts.
 
 Built live in Lesson 7 of the GenAI Unplugged Claude Code Full Course.
 
@@ -48,7 +48,7 @@ content-team/
 
 ## The guard
 
-`voice-guard.sh` runs after every Write or Edit. If a file matching `drafts/*-draft.md` contains a brochure phrase (nestled, breathtaking, hidden gem and ten more), it blocks the save and sends the offending lines back to the writer. Every check is logged to `voice-guard.log` in your project.
+`voice-guard.sh` runs after every Write or Edit. If a file matching `drafts/*-draft.md` contains a brochure phrase (nestled, breathtaking, hidden gem and six more), it sends the offending lines back to the writer, who rewrites them. The file is already saved when the hook runs, so the guard corrects, it does not prevent. Every check is logged to `voice-guard.log` in your project.
 
 Change the phrase list by editing the `PHRASES` line in `hooks/voice-guard.sh`.
 
