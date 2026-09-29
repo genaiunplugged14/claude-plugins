@@ -156,7 +156,7 @@ You are responsible for any costs your usage incurs.
 
 - **Anthropic (Claude API)** — every skill invocation uses Claude tokens. Anthropic Pro / Max subscriptions cover most personal use; pay-per-use API access bills your account.
 - **Perplexity API** — the researcher agent calls Perplexity's search API. Free tier is 1,000 requests/month; usage beyond that bills your Perplexity account. Subject to [Perplexity's privacy policy](https://www.perplexity.ai/hub/legal/privacy-policy) and [terms](https://www.perplexity.ai/hub/legal/terms-of-service).
-- **Firecrawl API** — the researcher agent calls Firecrawl to extract page content from URLs. Free tier is 500 pages/month; usage beyond that bills your Firecrawl account. Subject to [Firecrawl's privacy policy](https://www.firecrawl.dev/privacy) and [terms](https://www.firecrawl.dev/terms-of-service).
+- **Firecrawl API** — the researcher agent calls Firecrawl to extract page content from URLs. Free tier is 500 pages/month; usage beyond that bills your Firecrawl account. Subject to [Firecrawl's privacy policy](https://www.firecrawl.dev/privacy-policy) and [terms](https://www.firecrawl.dev/terms-of-service).
 
 When you install the plugin, your search queries flow through Perplexity and the URLs you scrape flow through Firecrawl. Review their respective policies before installing.
 
@@ -168,8 +168,8 @@ The plugin's skills create files in `drafts/` and `distribution/` inside whateve
 
 The plugin itself does not collect or transmit any data to GenAI Unplugged. For the broader GenAI Unplugged service, see:
 
-- [Privacy Policy](https://www.genaiunplugged.com/legal/privacy-policy)
-- [Terms of Service](https://www.genaiunplugged.com/legal/terms-of-service)
+- [Privacy Policy](https://www.genaiunplugged.com/privacy/)
+- [Terms of Service](https://www.genaiunplugged.com/terms/)
 
 ### Reporting issues and security concerns
 

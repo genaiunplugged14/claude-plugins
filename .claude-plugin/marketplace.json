@@ -12,6 +12,12 @@
       "description": "Research → draft → review → repurpose pipeline for content creators (4 agents, 5 namespaced skills, 3 hooks)",
       "category": "content",
       "source": "./content-ops"
+    },
+    {
+      "name": "content-team",
+      "description": "A three-agent content team: researcher, writer and reviewer, each with its own command, plus a guard hook on drafts. Built live in Lesson 7 of the Claude Code Full Course.",
+      "category": "content",
+      "source": "./content-team"
     }
   ]
 }

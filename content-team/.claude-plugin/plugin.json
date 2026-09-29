@@ -1,0 +1,7 @@
+{
+  "name": "content-team",
+  "version": "1.0.0",
+  "description": "A three-agent content team: research, draft, review",
+  "author": { "name": "GenAI Unplugged" },
+  "license": "MIT"
+}

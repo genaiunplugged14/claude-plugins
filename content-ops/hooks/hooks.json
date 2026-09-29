@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/block-dangerous.sh"
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/block-dangerous.sh\""
           }
         ]
       }
@@ -17,11 +17,11 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/format-on-save.sh"
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/format-on-save.sh\""
           },
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/quality-check.sh"
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/quality-check.sh\""
           }
         ]
       }

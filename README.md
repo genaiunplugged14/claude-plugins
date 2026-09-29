@@ -16,6 +16,7 @@ Add this marketplace once. After that, every plugin in this repo is one slash co
 | Plugin | What it does | Status |
 |---|---|---|
 | **content-ops** | Research → draft → review → repurpose pipeline. 4 agents, 5 namespaced skills, 3 hooks. | ✅ Live |
+| **content-team** | A three-agent content team: researcher, writer, reviewer. 3 agents, 4 namespaced skills, 1 guard hook. Built live in Lesson 7. | ✅ Live |
 | _(more coming)_ | research-team, seo-pack, distribution | 🚧 In progress |
 
 ## Repository structure
@@ -28,6 +29,10 @@ claude-plugins/
 │   ├── .claude-plugin/plugin.json
 │   ├── agents/  skills/  hooks/  templates/
 │   ├── .mcp.json
+│   └── README.md
+├── content-team/            # the three-agent team from Lesson 7
+│   ├── .claude-plugin/plugin.json
+│   ├── agents/  skills/  hooks/  templates/
 │   └── README.md
 └── README.md                # this file
 ```
@@ -52,8 +57,8 @@ Provided "AS IS", without warranty of any kind. The authors are not liable for a
 
 The plugins themselves do not collect or transmit data to GenAI Unplugged. For the broader GenAI Unplugged service:
 
-- [Privacy Policy](https://www.genaiunplugged.com/legal/privacy-policy)
-- [Terms of Service](https://www.genaiunplugged.com/legal/terms-of-service)
+- [Privacy Policy](https://www.genaiunplugged.com/privacy/)
+- [Terms of Service](https://www.genaiunplugged.com/terms/)
 
 ## About
 
