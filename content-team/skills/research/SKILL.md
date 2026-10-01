@@ -1,6 +1,8 @@
 ---
 description: Research a travel topic with the researcher agent and save a dated brief.
 argument-hint: [topic]
+user-invocable: true
+disable-model-invocation: true
 ---
 
 Use the researcher agent to investigate: $ARGUMENTS

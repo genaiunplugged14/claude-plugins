@@ -1,6 +1,8 @@
 ---
 description: Audit a draft with the reviewer agent and save the report.
 argument-hint: [topic]
+user-invocable: true
+disable-model-invocation: true
 ---
 
 Use the reviewer agent to audit the draft on: $ARGUMENTS

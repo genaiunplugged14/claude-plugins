@@ -1,6 +1,8 @@
 ---
 description: Draft the article from its research brief with the writer agent.
 argument-hint: [topic]
+user-invocable: true
+disable-model-invocation: true
 ---
 
 Use the writer agent to draft the article on: $ARGUMENTS

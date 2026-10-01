@@ -1,5 +1,6 @@
 ---
 description: Copy the content team's starter files into this project. Run it once, right after installing.
+user-invocable: true
 disable-model-invocation: true
 ---
 
