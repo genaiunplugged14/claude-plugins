@@ -1,6 +1,6 @@
 # Brand voice rules
 
-This is the file you customize. The starter rules below are GenAI Unplugged's defaults — replace them with your own voice principles before the writer agent's first run.
+This is the file you customize. The starter rules below are a generic example, not any publication's real voice. Replace them with your own voice principles before the writer agent's first run.
 
 ## Voice principles
 
